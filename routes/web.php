@@ -2,17 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\FrutaController;
+use App\Http\Controllers\TareaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/crearFruta", function () {
-    return view("crearFruta");
+Route::get("/tareas", function () {
+    return view("crearTarea");
 });
-Route::post("/crearFruta",[FrutaController::class,"Crear"]);
+Route::post("/tareas",[TareaController::class,"Crear"]);
 
-Route::get("/frutas",[FrutaController::class,"Listar"]);
-Route::get("/fruta/{d}",[FrutaController::class,"Obtener"]);
-Route::get("/eliminarFruta/{d}",[FrutaController::class,'Eliminar']);
+Route::get("/tareas",[TareaController::class,"Listar"]);
+
+Route::get("/tareas/{d}",[TareaController::class,"Obtener"]);
+Route::get("/eliminarTareas/{d}",[TareaController::class,'Eliminar']);
